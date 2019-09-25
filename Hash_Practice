@@ -40,7 +40,14 @@ when "display"
   		puts "#{movie}: #{rating}"
   end
 when "delete"
-  puts "Deleted!"
+  puts "Which movie?"
+  title = gets.chomp
+  if movies[title.to_sym] != nil
+    movies.delete(title.to_sym)
+    puts "#{title} sucessfully deleted."
+  else
+    puts "#{title} is not listed!"
+  end
 else
-  puts "Error!"
+  puts "That is not a viable selection!"
 end
